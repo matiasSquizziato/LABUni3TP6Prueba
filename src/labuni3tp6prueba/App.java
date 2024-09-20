@@ -35,10 +35,7 @@ public class App extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenuAd = new javax.swing.JMenu();
         jMenuGestion = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuLista = new javax.swing.JMenuItem();
 
         jMenuItem3.setText("jMenuItem3");
 
@@ -70,30 +67,15 @@ public class App extends javax.swing.JFrame {
         });
         jMenuAd.add(jMenuGestion);
 
+        jMenuLista.setText("Lista Productos");
+        jMenuLista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuListaActionPerformed(evt);
+            }
+        });
+        jMenuAd.add(jMenuLista);
+
         jMenuBar1.add(jMenuAd);
-
-        jMenu2.setText("Consultas");
-
-        jMenuItem1.setText("Consulta por \"Nombre\"");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem1);
-
-        jMenuItem2.setText("Consulta por \"Precio\"");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem2);
-
-        jMenuItem4.setText("Consulta por \"Rubro\"");
-        jMenu2.add(jMenuItem4);
-
-        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -111,16 +93,9 @@ public class App extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
-
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
-
     private void jMenuGestionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuGestionActionPerformed
-         InternalGestionProdu gestionProdu = new InternalGestionProdu();
+        
+        InternalGestionProdu gestionProdu = new InternalGestionProdu();
         escritorio.add(gestionProdu);
         gestionProdu.setVisible(true);
     }//GEN-LAST:event_jMenuGestionActionPerformed
@@ -129,6 +104,14 @@ public class App extends javax.swing.JFrame {
 
       
     }//GEN-LAST:event_jMenuAdActionPerformed
+
+    private void jMenuListaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuListaActionPerformed
+        
+        InternalListaProdu mostrarProdu = new InternalListaProdu();
+        escritorio.add(mostrarProdu);
+        mostrarProdu.setVisible(true);
+        
+    }//GEN-LAST:event_jMenuListaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,13 +153,10 @@ public class App extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane escritorio;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenuAd;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuGestion;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuLista;
     // End of variables declaration//GEN-END:variables
 }

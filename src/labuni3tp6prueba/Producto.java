@@ -4,7 +4,9 @@
  */
 package labuni3tp6prueba;
 
+import java.awt.List;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -73,9 +75,18 @@ public class Producto {
 }
     
     //Voy a sobre escribir el array con nuevos elementos
-//    public static cargarElementos(Producto nProducto){
-//        
-//        
-//        
-//    }
+    public void cargarElementos(Producto nProducto){
+        if (listaProductos.add(nProducto) == true ) {
+            JOptionPane.showMessageDialog(null,"Producto: " + nProducto.getNombre() + " cargado");
+            System.out.println("Producto: " + nProducto.getNombre()+ " cargado");
+        } else {
+            JOptionPane.showMessageDialog(null,"Producto ya existente");
+
+        }
+    }
+    
+    
+    
+
+    
 }

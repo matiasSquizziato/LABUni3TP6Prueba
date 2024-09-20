@@ -175,8 +175,10 @@ public class InternalGestionProdu extends javax.swing.JInternalFrame {
     Producto nuevoProducto = new Producto(categoria, nombre, precio);
 
     // Agregar el nuevo producto a una lista (suponiendo que tienes una lista para almacenar los productos)
-    listaProductos.add(nuevoProducto);
-
+//    listaProductos.add(nuevoProducto);
+    nuevoProducto.cargarElementos(nuevoProducto);
+    
+    
     // Actualizar la tabla (aquí debes implementar la lógica para actualizar la tabla con el nuevo producto)
     DefaultTableModel modeloTabla = (DefaultTableModel) jTable1.getModel();
     Object[] fila = {categoria, nombre, precio};
